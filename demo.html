@@ -26,7 +26,7 @@
 			let gba;
 			let runCommands = [];
 			let debug = null;
-
+			console.log(window.location.origin , window.location.href)
 			try {
 				gba = new GameBoyAdvance();
 				gba.keypad.eatInput = true;
@@ -354,7 +354,7 @@
         <button
         class="bigbutton"
         id="select"
-        onclick="dataURLtoFile('http://127.0.0.1:3000/a.gba','a.gba')"
+        onclick="dataURLtoFile(window.location.origin+'/a.gba','a.gba')"
         
         >
             Test
