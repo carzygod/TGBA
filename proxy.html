@@ -1,0 +1,22 @@
+<body>
+	<iframe id="sonIframe" src="./demo.html" style="width: 100%;height: 90%;"></iframe>
+	<br>
+	<button onClick="sendInfo()">向子窗口发送消息</button>
+	
+    <script type="text/javascript">
+
+        var info = {
+            message: "Hello Son!"
+        };
+		//发送跨域信息
+		function sendInfo(){
+			var sonIframe= document.getElementById("sonIframe");
+			sonIframe.contentWindow.postMessage(info, '*');
+		}
+		//接收跨域信息
+		window.addEventListener('message', function(e){
+				// alert(e.data.message);
+				console.log(e.data)
+		}, false);
+    </script>
+</body>
